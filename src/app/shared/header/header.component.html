@@ -1,1 +1,35 @@
-<p>header works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/"> Accesa MVP </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      (click)="collapsed = !collapsed"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse"
+      [class.collapse]="collapsed"
+      (window:resize)="collapsed = true"
+    >
+      <ul class="navbar-nav d-flex w-50 justify-content-around">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/courses">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/create-course">Create Course</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">
+            <i class="fa fa-user"></i>
+            Sign In
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

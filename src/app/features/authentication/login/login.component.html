@@ -1,1 +1,95 @@
-<p>login works!</p>
+<app-header></app-header>
+<app-layout-template>
+  <section>
+    <div class="row">
+      <div
+        class="login col-sm-12 col-lg-6 d-flex flex-column justify-content-around"
+      >
+        <h1 class="logo text-center">Accesa MVP</h1>
+        <form
+          [formGroup]="loginForm"
+          class="login-form d-flex flex-column justify-content-around"
+        >
+          <!--Email-->
+          <div class="email">
+            <label class="form-label">Email address</label>
+            <input
+              type="email"
+              placeholder="Email"
+              class="form-control position-relative"
+              formControlName="email"
+              required
+            />
+            <span
+              class="text-danger position-absolute"
+              *ngIf="onInputValidation('email', 'required')"
+            >
+              Email required
+            </span>
+            <span
+              class="text-danger position-absolute"
+              *ngIf="onInputValidation('email', 'email')"
+            >
+              Enter a valid email address
+            </span>
+          </div>
+
+          <!--Password-->
+          <div class="password">
+            <label class="form-label">Password</label>
+            <input
+              type="password"
+              placeholder="Password"
+              class="form-control position-relative"
+              formControlName="password"
+            />
+            <span
+              class="text-danger position-absolute"
+              *ngIf="onInputValidation('password', 'required')"
+            >
+              This field is required
+            </span>
+            <span
+              class="text-danger position-absolute"
+              *ngIf="onInputValidation('password', 'minlength')"
+            >
+              Password must be a least 8 characters
+            </span>
+          </div>
+
+          <!--Submit Button-->
+          <div class="submit mt-3">
+            <button
+              class="btn btn-primary w-100"
+              type="submit"
+              [disabled]="loginForm.invalid || loginForm.pristine"
+              (click)="onSubmit()"
+            >
+              Sign In
+            </button>
+          </div>
+
+          <!--TODO: create a component to reset the password-->
+          <div class="forgot-psw d-flex justify-content-center">
+            <a class="nav-link" routerLink="">Forgot Password</a>
+          </div>
+        </form>
+
+        <!--Register Button-->
+        <div class="mt-5">
+          <button
+            class="btn btn-outline-primary w-100"
+            (click)="onNavigateTo('register')"
+          >
+            Create an account
+          </button>
+        </div>
+      </div>
+      <div
+        class="col-sm-12 col-lg-6 d-flex justify-content-center align-items-center bg-primary text-light"
+      >
+        Accesa MVP
+      </div>
+    </div>
+  </section>
+</app-layout-template>
