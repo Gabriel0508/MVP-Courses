@@ -1,0 +1,27 @@
+[
+  {
+    "courseId": 1,
+    "title": "Dev-Ops",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi, excepturi cumque inventore voluptatibus id aspernatur autem perferendis fugit maxime iste labore, laboriosam iure minus ea in dolorum?"
+  },
+  {
+    "courseId": 2,
+    "title": "Front-End",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi, excepturi cumque inventore voluptatibus id aspernatur autem perferendis fugit maxime iste labore, laboriosam iure minus ea in dolorum?"
+  },
+  {
+    "courseId": 3,
+    "title": "Alghoritms",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi, excepturi cumque inventore voluptatibus id aspernatur autem perferendis fugit maxime iste labore, laboriosam iure minus ea in dolorum?"
+  },
+  {
+    "courseId": 4,
+    "title": "Back-end",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi, excepturi cumque inventore voluptatibus id aspernatur autem perferendis fugit maxime iste labore, laboriosam iure minus ea in dolorum?"
+  },
+  {
+    "courseId": 5,
+    "title": "Data Structure",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi, excepturi cumque inventore voluptatibus id aspernatur autem perferendis fugit maxime iste labore, laboriosam iure minus ea in dolorum?"
+  }
+]

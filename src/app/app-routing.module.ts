@@ -15,7 +15,7 @@ import { CourseCreationModule } from './features/course-creation/course-creation
 const routes: Routes = [
     { path: '',  component: LandingPageComponent},
     { path: 'courses', component: AllCoursesComponent },
-    { path: 'course/id', component: CourseDetailsComponent },
+    { path: 'course/:id', component: CourseDetailsComponent },
     { path: 'create-course', component: CreateCourseComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
