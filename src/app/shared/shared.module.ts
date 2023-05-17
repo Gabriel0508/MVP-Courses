@@ -5,17 +5,19 @@ import { HeaderComponent } from './header/header.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { LayoutTemplateComponent } from './layout-template/layout-template.component';
+import { CourseCardComponent } from './course-card/course-card.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    LayoutTemplateComponent
+    LayoutTemplateComponent,
+    CourseCardComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
     CommonModule
   ],
-  exports: [HeaderComponent, LayoutTemplateComponent]
+  exports: [HeaderComponent, LayoutTemplateComponent, CourseCardComponent]
 })
 export class SharedModule { }

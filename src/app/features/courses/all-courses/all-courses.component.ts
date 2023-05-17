@@ -17,7 +17,7 @@ export class AllCoursesComponent implements OnInit, OnDestroy {
   constructor(private courseService: CourseService) {}
 
   ngOnInit(): void {
-    this,this.onGetCourses();
+    this, this.onGetCourses();
   }
 
   ngOnDestroy(): void {

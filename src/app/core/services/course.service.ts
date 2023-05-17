@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CourseService {
-  private courseUrl = 'api/courses/courses.json';
+  private courseUrl = './assets/api/courses/courses.json';
 
   constructor(private httpClient: HttpClient) {}
 

@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
-import {FormGroup} from "@angular/forms";
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ValidationsService {
-
-  isFieldValid(field: string, errorType:string , registerForm: FormGroup) {
+  isFieldValid(field: string, errorType: string, registerForm: FormGroup) {
     return (
-            registerForm.controls[field].touched || registerForm.controls[field].dirty)
-        && registerForm.controls[field].errors?.[errorType]
+      (registerForm.controls[field].touched ||
+        registerForm.controls[field].dirty) &&
+      registerForm.controls[field].errors?.[errorType]
+    );
   }
 }
