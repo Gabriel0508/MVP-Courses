@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ICourse } from 'src/app/core/models/course.model';
 import { CourseService } from 'src/app/core/services/course.service';
 
@@ -14,7 +14,8 @@ export class CourseDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private courseService: CourseService
+    private courseService: CourseService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -33,5 +34,9 @@ export class CourseDetailsComponent implements OnInit {
       next: (course) => (this.course = course),
       error: (err) => (this.errorMessage = err),
     });
+  }
+
+  onBack(url: string): void {
+    this.router.navigateByUrl(url)
   }
 }
