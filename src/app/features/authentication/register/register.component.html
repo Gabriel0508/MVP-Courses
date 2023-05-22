@@ -1,10 +1,8 @@
 <app-header></app-header>
 <app-layout-template>
   <section>
-    <div class="row">
-      <div
-        class="register col-sm-12 col-lg-6 d-flex flex-column"
-      >
+    <div class="row register-container">
+      <div class="register col-sm-12 col-lg-6 d-flex flex-column">
         <h1 class="logo text-center">Register to MVP</h1>
         <form
           [formGroup]="registerForm"
@@ -110,11 +108,6 @@
             </button>
           </div>
         </form>
-      </div>
-      <div
-        class="col-sm-12 col-lg-6 d-flex justify-content-center align-items-center bg-primary text-light"
-      >
-        Accesa MVP
       </div>
     </div>
   </section>

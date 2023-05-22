@@ -1,8 +1,18 @@
 .row {
-    .login {
-        height: 80vh;
-        .login-form {
-            height: 60vh;
-        }
+  background-image: url("../../../../assets/images/bg-home.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  .login {
+    height: 80vh;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 0 10px 10px 0;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    .login-form {
+      height: 60vh;
     }
+  }
 }
