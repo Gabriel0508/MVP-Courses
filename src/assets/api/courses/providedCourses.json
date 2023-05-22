@@ -1,0 +1,22 @@
+[
+  {
+    "courseId": 6,
+    "title": "Human Resources",
+    "description": "lorem10"
+  },
+  {
+    "courseId": 7,
+    "title": "Professional Development",
+    "description": "lorem10"
+  },
+  {
+    "courseId": 8,
+    "title": "Training and Education",
+    "description": "lorem10"
+  },
+  {
+    "courseId": 9,
+    "title": "Training and Education",
+    "description": "lorem10"
+  }
+]

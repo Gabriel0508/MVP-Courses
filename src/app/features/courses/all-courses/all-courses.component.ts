@@ -17,7 +17,7 @@ export class AllCoursesComponent implements OnInit, OnDestroy {
   constructor(private courseService: CourseService) {}
 
   ngOnInit(): void {
-    this, this.onGetCourses();
+    this.onGetCourses();
   }
 
   ngOnDestroy(): void {
@@ -25,7 +25,7 @@ export class AllCoursesComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Method to get the courses
+   * Method to get the all courses
    */
   onGetCourses(): void {
     this.sub = this.courseService.getCourses().subscribe({

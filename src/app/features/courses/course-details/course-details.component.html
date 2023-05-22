@@ -13,4 +13,18 @@
       </button>
     </div>
   </div>
+
+  <div class="card" *ngIf="providedCourse">
+    <div class="card-header">
+      {{ providedCourse.title }}
+    </div>
+    <div class="card-body">
+      <p>{{ providedCourse.description }}</p>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-outline-primary" (click)="onBack('/courses')">
+        Back to courses list
+      </button>
+    </div>
+  </div>
 </app-layout-template>

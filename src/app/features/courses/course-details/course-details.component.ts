@@ -10,6 +10,7 @@ import { CourseService } from 'src/app/core/services/course.service';
 })
 export class CourseDetailsComponent implements OnInit {
   course: ICourse | undefined;
+  providedCourse: ICourse | undefined;
   errorMessage = '';
 
   constructor(
@@ -19,14 +20,15 @@ export class CourseDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));    
+    const id = Number(this.route.snapshot.paramMap.get('id'));
     if (id) {
       this.onGetCourse(id);
+      this.onGetProvidedCourse(id);
     }
   }
 
   /**
-   * Method to get the course 
+   * Method to get the course
    * @param id
    */
   onGetCourse(id: number): void {
@@ -36,7 +38,18 @@ export class CourseDetailsComponent implements OnInit {
     });
   }
 
+  /**
+   * Method to get the provided course
+   * @param id 
+   */
+  onGetProvidedCourse(id: number): void {
+    this.courseService.getProvidedCourse(id).subscribe({
+      next: (providedCourse) => (this.providedCourse = providedCourse),
+      error: (err) => (this.errorMessage = err),
+    });
+  }
+
   onBack(url: string): void {
-    this.router.navigateByUrl(url)
+    this.router.navigateByUrl(url);
   }
 }

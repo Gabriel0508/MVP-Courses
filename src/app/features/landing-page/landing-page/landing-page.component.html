@@ -1,6 +1,5 @@
 <app-header></app-header>
 <app-layout-template>
-
   <!--Provided Courses-->
   <div class="provided-courses">
     <div class="d-flex flex-column justify-content-center align-items-center">
@@ -8,7 +7,10 @@
       <p>All Our Available Courses Listed Below</p>
     </div>
     <div class="row g-2">
-      <div class="col-sm-12 col-lg-3" *ngFor="let course of providedCourses">
+      <div
+        class="col-sm-12 col-lg-3"
+        *ngFor="let providedCourse of providedCourses"
+      >
         <div class="card">
           <img
             src="/assets/images/accesa.avif"
@@ -17,9 +19,12 @@
             alt="course"
           />
           <div class="card-body">
-            <h5 class="card-title">{{ course.title }}</h5>
-            <p class="card-text">{{ course.description }}</p>
-            <a class="card-link" href="#">
+            <h5 class="card-title">{{ providedCourse.title }}</h5>
+            <p class="card-text">{{ providedCourse.description }}</p>
+            <a
+              class="card-link"
+              [routerLink]="['/courses', providedCourse.courseId]"
+            >
               Course Details
             </a>
           </div>
@@ -39,7 +44,10 @@
       <h1>Recommended Courses</h1>
     </div>
     <div class="row g-2">
-      <div class="col-sm-12 col-lg-4" *ngFor="let course of providedCourses">
+      <div
+        class="col-sm-12 col-lg-4"
+        *ngFor="let providedCourse of providedCourses"
+      >
         <div class="card">
           <img
             src="/assets/images/accesa.avif"
@@ -48,9 +56,12 @@
             alt="course"
           />
           <div class="card-body">
-            <h5 class="card-title">{{ course.title }}</h5>
-            <p class="card-text">{{ course.description }}</p>
-            <a class="card-link" href="#">
+            <h5 class="card-title">{{ providedCourse.title }}</h5>
+            <p class="card-text">{{ providedCourse.description }}</p>
+            <a
+              class="card-link"
+              [routerLink]="['/courses', providedCourse.courseId]"
+            >
               Course Details
             </a>
           </div>

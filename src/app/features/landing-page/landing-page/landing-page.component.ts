@@ -1,37 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { ICourse } from 'src/app/core/models/course.model';
+import { CourseService } from 'src/app/core/services/course.service';
 
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
 })
-export class LandingPageComponent implements OnInit {
-  providedCourses = [
-    {
-      courseId: 1,
-      title: 'Human Resources',
-      description: 'lorem10',
-    },
-    {
-      courseId: 2,
-      title: 'Professional Development',
-      description: 'lorem10',
-    },
-    {
-      courseId: 3,
-      title: 'Training and Education',
-      description: 'lorem10',
-    },
-    {
-      courseId: 4,
-      title: 'Training and Education',
-      description: 'lorem10',
-    },
-  ];
-  constructor(private router: Router) {}
+export class LandingPageComponent implements OnInit, OnDestroy {
+  sub: Subscription | undefined;
+  errorMessage = '';
 
-  ngOnInit(): void {}
+  providedCourses: ICourse[] = [];
+
+  constructor(private router: Router, private courseService: CourseService) {}
+
+  ngOnInit(): void {
+    this.onGetProvidedCourses();
+  }
+
+  ngOnDestroy(): void {
+    this.sub?.unsubscribe();
+  }
+
   /**
    * Method to navigate to a specific component
    * @param url
@@ -40,6 +33,22 @@ export class LandingPageComponent implements OnInit {
     this.router.navigateByUrl(url);
   }
 
+  /**
+   * Method to get the provided Courses
+   */
+  onGetProvidedCourses(): void {
+    this.sub = this.courseService.getProvidedCourses().subscribe({
+      next: (providedCourses) => {
+        this.providedCourses = providedCourses;
+      },
+      error: (err) => (this.errorMessage = err),
+    });
+  }
+
+  /**
+   * Method to navigate to the details of course
+   * @param url 
+   */
   onCourseDetails(url: string): void {
     this.router.navigate(['/courses', this.providedCourses]);
   }

@@ -19,7 +19,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ course.title }}</h5>
           <p class="card-text">{{ course.description }}</p>
-          <a class="card-link" [routerLink]="['courses', course.courseId]">
+          <a class="card-link" [routerLink]="[course.courseId]">
             Course Details
           </a>
         </div>
