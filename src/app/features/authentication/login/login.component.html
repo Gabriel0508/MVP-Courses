@@ -5,14 +5,14 @@
       <div
         class="login col-sm-12 col-lg-6 d-flex flex-column justify-content-around"
       >
-        <h1 class="logo text-center">Accesa MVP</h1>
+        <h1 class="logo text-center text-blue"> {{ 'authentication.title' | translate }}</h1>
         <form
           [formGroup]="loginForm"
           class="login-form d-flex flex-column justify-content-around"
         >
           <!--Email-->
           <div class="email">
-            <label class="form-label">Email address</label>
+            <label class="form-label text-dark-blue">{{ 'authentication.email' | translate }}</label>
             <input
               type="email"
               placeholder="Email"
@@ -24,19 +24,19 @@
               class="text-danger position-absolute"
               *ngIf="onInputValidation('email', 'required')"
             >
-              Email required
+            {{ 'authentication.err-message.email' | translate }}
             </span>
             <span
               class="text-danger position-absolute"
               *ngIf="onInputValidation('email', 'email')"
             >
-              Enter a valid email address
+            {{ 'authentication.err-message.invalid_email' | translate }}
             </span>
           </div>
 
           <!--Password-->
           <div class="password">
-            <label class="form-label">Password</label>
+            <label class="form-label text-dark-blue">{{ 'authentication.password' | translate }}</label>
             <input
               type="password"
               placeholder="Password"
@@ -47,41 +47,41 @@
               class="text-danger position-absolute"
               *ngIf="onInputValidation('password', 'required')"
             >
-              This field is required
+            {{ 'authentication.err-message.password' | translate }}
             </span>
             <span
               class="text-danger position-absolute"
               *ngIf="onInputValidation('password', 'minlength')"
             >
-              Password must be a least 8 characters
+            {{ 'authentication.err-message.invalid_psw' | translate }}
             </span>
           </div>
 
           <!--Submit Button-->
           <div class="submit mt-3">
             <button
-              class="btn btn-primary w-100"
+              class="btn btn-blue w-100"
               type="submit"
               [disabled]="loginForm.invalid || loginForm.pristine"
               (click)="onSubmit()"
             >
-              Sign In
+            {{ 'buttons.sign_in_button' | translate }}
             </button>
           </div>
 
           <!--TODO: create a component to reset the password-->
           <div class="forgot-psw d-flex justify-content-center">
-            <a class="nav-link" routerLink="">Forgot Password</a>
+            <a class="nav-link text-blue" routerLink="#"> {{ 'authentication.forgot_psw' | translate }}</a>
           </div>
         </form>
 
         <!--Register Button-->
         <div class="mt-5">
           <button
-            class="btn btn-outline-primary w-100"
+            class="btn btn-blue w-100"
             (click)="onNavigateTo('register')"
           >
-            Create an account
+          {{ 'buttons.create_acc_button' | translate }}
           </button>
         </div>
       </div>

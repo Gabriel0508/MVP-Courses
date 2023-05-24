@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { LayoutTemplateComponent } from './layout-template/layout-template.component';
 import { CourseCardComponent } from './course-card/course-card.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CourseCardComponent } from './course-card/course-card.component';
   imports: [
     BrowserModule,
     RouterModule,
-    CommonModule
+    CommonModule,
+    TranslateModule
   ],
   exports: [HeaderComponent, LayoutTemplateComponent, CourseCardComponent]
 })

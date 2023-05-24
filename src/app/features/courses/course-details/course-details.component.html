@@ -8,11 +8,16 @@
       <p>{{ course.description }}</p>
     </div>
     <div class="card-footer">
-      <button class="btn btn-outline-primary" (click)="onBack('/courses')">
+      <button class="btn btn-blue" type="button" (click)="onBack('/courses')"><i class="fa fa-arrow-left me-2"></i>
         Back to courses list
       </button>
     </div>
   </div>
+
+  <!--TODO: use app-course-card component, navigate back to courses-->
+  <!-- <app-course-card *ngIf="course" [title]="course.title" [description]="course.description">
+
+  </app-course-card> -->
 
   <div class="card" *ngIf="providedCourse">
     <div class="card-header">
@@ -22,7 +27,7 @@
       <p>{{ providedCourse.description }}</p>
     </div>
     <div class="card-footer">
-      <button class="btn btn-outline-primary" (click)="onBack('/courses')">
+      <button class="btn btn-blue" type="button" (click)="onBack('/courses')"><i class="fa fa-arrow-left me-2"></i>
         Back to courses list
       </button>
     </div>

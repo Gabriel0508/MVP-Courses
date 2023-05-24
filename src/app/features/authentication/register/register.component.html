@@ -3,7 +3,7 @@
   <section>
     <div class="row register-container">
       <div class="register col-sm-12 col-lg-6 d-flex flex-column">
-        <h1 class="logo text-center">Register to MVP</h1>
+        <h1 class="logo text-center text-blue">{{ 'authentication.title' | translate }}</h1>
         <form
           [formGroup]="registerForm"
           class="register-form d-flex flex-column justify-content-around mt-3"
@@ -12,10 +12,10 @@
             <div class="col-sm-12 col-lg-6">
               <!--FirstName-->
               <div class="first-name">
-                <label class="form-label">First Name</label>
+                <label class="form-label text-dark-blue">{{ 'authentication.first_name' | translate }}</label>
                 <input
                   type="text"
-                  placeholder="First Name"
+                  placeholder="{{ 'authentication.first_name' | translate }}"
                   class="form-control position-relative"
                   formControlName="firstName"
                   required
@@ -24,17 +24,17 @@
                   class="text-danger position-absolute"
                   *ngIf="onInputValidation('firstName', 'required')"
                 >
-                  First Name is required
+                {{ 'authentication.err-message.first_name' | translate }}
                 </span>
               </div>
             </div>
             <div class="col-sm-12 col-lg-6">
               <!--LastName-->
               <div class="last-name">
-                <label class="form-label">Last Name</label>
+                <label class="form-label text-dark-blue">{{ 'authentication.last_name' | translate }}</label>
                 <input
                   type="text"
-                  placeholder="Last Name"
+                  placeholder="{{ 'authentication.last_name' | translate }}"
                   class="form-control position-relative"
                   formControlName="lastName"
                   required
@@ -43,7 +43,7 @@
                   class="text-danger position-absolute"
                   *ngIf="onInputValidation('lastName', 'required')"
                 >
-                  Last Name is required
+                {{ 'authentication.err-message.last_name' | translate }}
                 </span>
               </div>
             </div>
@@ -51,10 +51,10 @@
 
           <!--Email-->
           <div class="email">
-            <label class="form-label">Email address</label>
+            <label class="form-label text-dark-blue">{{ 'authentication.email' | translate }}</label>
             <input
               type="email"
-              placeholder="Email"
+              placeholder="{{ 'authentication.email' | translate }}"
               class="form-control position-relative"
               formControlName="email"
               required
@@ -63,22 +63,22 @@
               class="text-danger position-absolute"
               *ngIf="onInputValidation('email', 'required')"
             >
-              Email required
+            {{ 'authentication.err-message.email' | translate }}
             </span>
             <span
               class="text-danger position-absolute"
               *ngIf="onInputValidation('email', 'email')"
             >
-              Enter a valid email address
+            {{ 'authentication.err-message.invalid_email' | translate }}
             </span>
           </div>
 
           <!--Password-->
           <div class="password">
-            <label class="form-label">Password</label>
+            <label class="form-label text-dark-blue">{{ 'authentication.password' | translate }}</label>
             <input
               type="password"
-              placeholder="Password"
+              placeholder="{{ 'authentication.password' | translate }}"
               class="form-control position-relative"
               formControlName="password"
             />
@@ -86,25 +86,25 @@
               class="text-danger position-absolute"
               *ngIf="onInputValidation('password', 'required')"
             >
-              This field is required
+            {{ 'authentication.err-message.password' | translate }}
             </span>
             <span
               class="text-danger position-absolute"
               *ngIf="onInputValidation('password', 'minlength')"
             >
-              Password must be a least 8 characters
+            {{ 'authentication.err-message.invalid_psw' | translate }}
             </span>
           </div>
 
           <!--Submit Button-->
           <div class="submit mt-5">
             <button
-              class="btn btn-primary w-100"
+              class="btn btn-blue w-100"
               type="submit"
               (click)="onSubmit()"
               [disabled]="registerForm.invalid || registerForm.pristine"
             >
-              Register
+            {{ 'buttons.register_button' | translate }}
             </button>
           </div>
         </form>

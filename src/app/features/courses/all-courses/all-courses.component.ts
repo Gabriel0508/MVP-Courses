@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ICourse } from 'src/app/core/models/course.model';
 import { CourseService } from 'src/app/core/services/course.service';
@@ -14,7 +15,7 @@ export class AllCoursesComponent implements OnInit, OnDestroy {
 
   courses: ICourse[] = [];
 
-  constructor(private courseService: CourseService) {}
+  constructor(private courseService: CourseService, private router: Router) {}
 
   ngOnInit(): void {
     this.onGetCourses();
@@ -34,5 +35,14 @@ export class AllCoursesComponent implements OnInit, OnDestroy {
       },
       error: (err) => (this.errorMessage = err),
     });
+  }
+
+  /**
+   * Method to navigate to the details of course
+   * @param id
+   */
+  onCourseDetails(id: number) {
+    const url = `/courses/${id}`;
+    this.router.navigateByUrl(url);
   }
 }
