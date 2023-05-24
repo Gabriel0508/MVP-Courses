@@ -1,29 +1,16 @@
 <app-header></app-header>
 
 <app-layout-template>
-  <!-- <app-course-card
-    *ngFor="let course of courses"
-    [title]="course.title"
-    [description]="course.description"
-  >
-  </app-course-card> -->
   <div class="row g-2">
     <div class="col-sm-12 col-lg-4" *ngFor="let course of courses">
-      <div class="card">
-        <img
-          src="/assets/images/accesa.avif"
-          style="width: 10rem"
-          class="card-img-top"
-          alt="course"
-        />
-        <div class="card-body">
-          <h5 class="card-title">{{ course.title }}</h5>
-          <p class="card-text">{{ course.description }}</p>
-          <a class="card-link" [routerLink]="[course.courseId]">
-            Course Details
-          </a>
-        </div>
-      </div>
+      <app-course-card
+        [courseId]="course.courseId"
+        [courseImage]="'/assets/images/accesa.avif'"
+        [title]="course.title"
+        [description]="course.description"
+        (courseDetails)="onCourseDetails($event)"
+      >
+      </app-course-card>
     </div>
   </div>
 </app-layout-template>

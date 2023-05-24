@@ -1,6 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+<nav class="navbar navbar-expand-lg navbar-dark shadow">
   <div class="container">
-    <a class="navbar-brand fw-bold" routerLink="/"> Accesa MVP </a>
+    <a class="navbar-brand fw-bold" routerLink="/">
+      {{ "authentication.title" | translate }}
+    </a>
     <button
       class="navbar-toggler"
       type="button"
@@ -13,27 +15,47 @@
       [class.collapse]="collapsed"
       (window:resize)="collapsed = true"
     >
-      <ul class="navbar-nav d-flex justify-content-between w-50">
+      <ul
+        class="navbar-nav d-flex justify-content-between align-items-center w-50"
+      >
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/">Home</a>
+          <a class="nav-link" routerLinkActive="active" routerLink="/">{{
+            "header.home" | translate
+          }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/courses">Courses</a>
+          <a class="nav-link" routerLinkActive="active" routerLink="/courses">{{
+            "header.courses" | translate
+          }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/create-course">Create Course</a>
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            routerLink="/create-course"
+            >{{ "header.create_courses" | translate }}</a
+          >
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" routerLink="/login">
             <i class="fa fa-user"></i>
-            Sign In
+            {{ "header.sign_in" | translate }}
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">
-            <i class="fa fa-globe"></i>
-            EN
-          </a>
+          <select
+            class="form-select form-select-sm"
+            #selectedLang
+            (change)="onSwitchLang(selectedLang.value)"
+          >
+            <option
+              *ngFor="let language of translate.getLangs()"
+              [value]="language"
+              [selected]="language === translate.currentLang"
+            >
+              {{ language }}
+            </option>
+          </select>
         </li>
       </ul>
     </div>

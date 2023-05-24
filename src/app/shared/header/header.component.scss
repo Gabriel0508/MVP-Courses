@@ -1,0 +1,26 @@
+@import "../../../assets/styles/variables";
+
+.navbar {
+  z-index: 1;
+  background: transparent linear-gradient(45deg, #0097b9 0%, #8769ae 100%) 0 0
+    no-repeat padding-box;
+
+  .container {
+    .navbar-toggler {
+      &:hover:enabled {
+        background-color: $dark-blue;
+        color: $white;
+        border-color: $dark-blue;
+      }
+      &:focus {
+        box-shadow: none !important;
+      }
+    }
+    select {
+      cursor: pointer;
+      &:focus {
+        box-shadow: none !important;
+      }
+    }
+  }
+}

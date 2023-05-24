@@ -47,9 +47,10 @@ export class LandingPageComponent implements OnInit, OnDestroy {
 
   /**
    * Method to navigate to the details of course
-   * @param url 
+   * @param id
    */
-  onCourseDetails(url: string): void {
-    this.router.navigate(['/courses', this.providedCourses]);
+  onCourseDetails(id: number) {
+    const url = `/courses/${id}`;
+    this.router.navigateByUrl(url);
   }
 }

@@ -3,14 +3,23 @@
 <!--Home background-->
 <div class="home">
   <div class="container d-flex flex-column justify-content-center h-100">
-    <h1>Enjoy <strong>Online Learning</strong></h1>
-    <p class="mt-2 w-50">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, quia
-      voluptas deserunt corrupti est sequi consectetur pariatur illo dolorum
-      ducimus.
+    <h1 class="text-dark-blue">
+      {{ "landing_page.banner.enjoy" | translate }}
+      <strong class="text-dark-blue">{{
+        "landing_page.banner.online" | translate
+      }}</strong>
+    </h1>
+    <p class="mt-2 text-dark-blue">
+      {{ "landing_page.banner.description" | translate }}
     </p>
     <div class="more-btn mt-3">
-      <button class="btn btn-primary mt-2" (click)="onNavigateTo('/courses')">Learn more</button>
+      <button
+        class="btn btn-blue rounded-pill mt-2 px-4"
+        (click)="onNavigateTo('/courses')"
+      >
+        {{ "buttons.banner_button" | translate }}
+        <i class="fa fa-arrow-right ms-2"></i>
+      </button>
     </div>
   </div>
 </div>
@@ -19,86 +28,66 @@
   <!--Provided Courses-->
   <div class="provided-courses">
     <div class="d-flex flex-column justify-content-center align-items-center">
-      <h1>Courses We Provided</h1>
-      <p>All Our Available Courses Listed Below</p>
+      <h1 class="text-dark-blue">{{ 'categories.provided_courses' | translate }}</h1>
+      <p class="text-blue">{{ 'categories.provided_description' | translate }}</p>
     </div>
     <div class="row g-2">
       <div
         class="col-sm-12 col-lg-3"
         *ngFor="let providedCourse of providedCourses"
       >
-        <div class="card shadow">
-          <img
-            src="/assets/images/accesa.avif"
-            style="width: 10rem"
-            class="card-img-top"
-            alt="course"
-          />
-          <div class="card-body">
-            <h5 class="card-title">{{ providedCourse.title }}</h5>
-            <p class="card-text">{{ providedCourse.description }}</p>
-            <a
-              class="card-link"
-              [routerLink]="['/courses', providedCourse.courseId]"
-            >
-              Course Details
-            </a>
-          </div>
-        </div>
+        <app-course-card
+          [courseId]="providedCourse.courseId"
+          [courseImage]="'/assets/images/accesa.avif'"
+          [title]="providedCourse.title"
+          [description]="providedCourse.description"
+          (courseDetails)="onCourseDetails($event)"
+        >
+        </app-course-card>
       </div>
-    </div>
-    <div class="all-categories mt-3">
-      <button class="btn btn-outline-primary" (click)="onNavigateTo('courses')">
-        View all categories <i class="fa fa-arrow-right ms-2"></i>
-      </button>
     </div>
   </div>
 
-  <!--Recommended Courses-->
-  <div class="recommended-courses">
-    <div class="d-flex flex-column justify-content-center align-items-center">
-      <h1>Recommended Courses</h1>
+  <!--Popular Courses-->
+  <div class="popular-courses mt-5">
+    <div
+      class="d-flex flex-column justify-content-center align-items-center py-2"
+    >
+      <h1 class="text-dark-blue">{{ 'categories.popular_courses' | translate }}</h1>
     </div>
     <div class="row g-2">
       <div
         class="col-sm-12 col-lg-4"
         *ngFor="let providedCourse of providedCourses"
       >
-        <div class="card shadow">
-          <img
-            src="/assets/images/accesa.avif"
-            style="width: 10rem"
-            class="card-img-top"
-            alt="course"
-          />
-          <div class="card-body">
-            <h5 class="card-title">{{ providedCourse.title }}</h5>
-            <p class="card-text">{{ providedCourse.description }}</p>
-            <a
-              class="card-link"
-              [routerLink]="['/courses', providedCourse.courseId]"
-            >
-              Course Details
-            </a>
-          </div>
-        </div>
+        <app-course-card
+          [courseId]="providedCourse.courseId"
+          [courseImage]="'/assets/images/accesa.avif'"
+          [title]="providedCourse.title"
+          [description]="providedCourse.description"
+          (courseDetails)="onCourseDetails($event)"
+        >
+        </app-course-card>
       </div>
     </div>
   </div>
 
   <!--Trainers-->
-  <div class="trainers">
+  <div class="trainers mt-5">
     <div class="d-flex flex-column justify-content-center align-items-center">
-      <h1>Our Trainers</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eos.
+      <h1 class="text-dark-blue">{{ 'categories.trainers' | translate }}</h1>
+      <p class="text-blue">
+        {{ 'categories.trainers_description' | translate }}
       </p>
     </div>
     <div class="row g-2">
       <div class="col-sm-12 col-lg-4">
         <div class="card shadow">
-          <img src="/assets/images/profile-img.webp" class="card-img-top"
-          alt="course" />
+          <img
+            src="/assets/images/profile-img.webp"
+            class="card-img-top"
+            alt="course"
+          />
         </div>
       </div>
     </div>
