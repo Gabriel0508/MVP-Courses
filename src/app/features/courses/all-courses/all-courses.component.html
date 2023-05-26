@@ -1,8 +1,47 @@
 <app-header></app-header>
 
 <app-layout-template>
-  <div class="row g-2">
-    <div class="col-sm-12 col-lg-4" *ngFor="let course of courses">
+  <!--Searching courses-->
+  <div class="row">
+    <div class="col-lg-4">
+      <p class="text-dark-blue">
+        <strong>{{ courses.length }}</strong> Courses categories
+      </p>
+    </div>
+    <div class="col-lg-8">
+      <!--TODO: the filter part-->
+      <form [formGroup]="searchForm">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <select class="form-select">
+              <option
+                *ngFor="let course of courses"
+                [value]="course"
+                [selected]="course === courses[0]"
+              >
+                {{ course.title }}
+              </option>
+            </select>
+          </div>
+          <div class="col-lg-8 position-relative">
+            <input
+              type="text"
+              placeholder="Search courses"
+              class="form-control"
+              formControlName="search"
+            />
+            <div class="search position-absolute">
+              <i class="fa fa-search text-dark-blue"></i>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!--Courses Cards-->
+  <div class="row g-4 mt-3">
+    <div class="col-sm-12 col-lg-3" *ngFor="let course of courses">
       <app-course-card
         [courseId]="course.courseId"
         [courseImage]="'/assets/images/accesa.avif'"

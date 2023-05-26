@@ -3,7 +3,7 @@
     "home": "Startseite",
     "courses": "Kurse",
     "create_courses": "Kurse erstellen",
-    "sign_in": "Anmelden"
+    "sign_in": "Anmelden/Register"
   },
   "landing_page": {
     "banner": {
@@ -36,7 +36,7 @@
     }
   },
   "buttons": {
-    "banner_button": "Alle Kategorien anzeigen",
+    "banner_button": "Kurse erkunden",
     "sign_in_button": "Einmelden",
     "register_button": "Register",
     "create_acc_button": "Erstellen Sie ein Konto"

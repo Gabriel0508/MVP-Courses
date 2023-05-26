@@ -5,11 +5,9 @@
   <div class="container d-flex flex-column justify-content-center h-100">
     <h1 class="text-dark-blue">
       {{ "landing_page.banner.enjoy" | translate }}
-      <strong class="text-dark-blue">{{
-        "landing_page.banner.online" | translate
-      }}</strong>
+      <strong class="text-dark-blue">{{ "landing_page.banner.online" | translate }}</strong>
     </h1>
-    <p class="mt-2 text-dark-blue">
+    <p class="mt-2 text-dark-blue fw-bold">
       {{ "landing_page.banner.description" | translate }}
     </p>
     <div class="more-btn mt-3">
@@ -28,8 +26,12 @@
   <!--Provided Courses-->
   <div class="provided-courses">
     <div class="d-flex flex-column justify-content-center align-items-center">
-      <h1 class="text-dark-blue">{{ 'categories.provided_courses' | translate }}</h1>
-      <p class="text-blue">{{ 'categories.provided_description' | translate }}</p>
+      <h1 class="text-dark-blue">
+        {{ "categories.provided_courses" | translate }}
+      </h1>
+      <p class="text-blue">
+        {{ "categories.provided_description" | translate }}
+      </p>
     </div>
     <div class="row g-2">
       <div
@@ -53,16 +55,18 @@
     <div
       class="d-flex flex-column justify-content-center align-items-center py-2"
     >
-      <h1 class="text-dark-blue">{{ 'categories.popular_courses' | translate }}</h1>
+      <h1 class="text-dark-blue">
+        {{ "categories.popular_courses" | translate }}
+      </h1>
     </div>
     <div class="row g-2">
       <div
-        class="col-sm-12 col-lg-4"
+        class="col-sm-12 col-lg-3"
         *ngFor="let providedCourse of providedCourses"
       >
         <app-course-card
           [courseId]="providedCourse.courseId"
-          [courseImage]="'/assets/images/accesa.avif'"
+          [courseImage]="'/assets/images/profile-img.webp'"
           [title]="providedCourse.title"
           [description]="providedCourse.description"
           (courseDetails)="onCourseDetails($event)"
@@ -75,13 +79,13 @@
   <!--Trainers-->
   <div class="trainers mt-5">
     <div class="d-flex flex-column justify-content-center align-items-center">
-      <h1 class="text-dark-blue">{{ 'categories.trainers' | translate }}</h1>
+      <h1 class="text-dark-blue">{{ "categories.trainers" | translate }}</h1>
       <p class="text-blue">
-        {{ 'categories.trainers_description' | translate }}
+        {{ "categories.trainers_description" | translate }}
       </p>
     </div>
     <div class="row g-2">
-      <div class="col-sm-12 col-lg-4">
+      <div class="col-sm-12 col-lg-3">
         <div class="card shadow">
           <img
             src="/assets/images/profile-img.webp"

@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ICourse } from 'src/app/core/models/course.model';
@@ -12,12 +13,18 @@ import { CourseService } from 'src/app/core/services/course.service';
 export class AllCoursesComponent implements OnInit, OnDestroy {
   sub: Subscription | undefined;
   errorMessage = '';
+  searchForm: FormGroup = new FormGroup({});
 
   courses: ICourse[] = [];
 
-  constructor(private courseService: CourseService, private router: Router) {}
+  constructor(
+    private courseService: CourseService,
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
+    this.initSearchForm();
     this.onGetCourses();
   }
 
@@ -44,5 +51,14 @@ export class AllCoursesComponent implements OnInit, OnDestroy {
   onCourseDetails(id: number) {
     const url = `/courses/${id}`;
     this.router.navigateByUrl(url);
+  }
+
+  /**
+   * Method to init the search form
+   */
+  private initSearchForm(): void {
+    this.searchForm = this.fb.group({
+      search: [''],
+    });
   }
 }

@@ -2,26 +2,46 @@
   {
     "courseId": 1,
     "title": "Dev-Ops",
-    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi, excepturi cumque inventore voluptatibus id aspernatur autem perferendis fugit maxime iste labore, laboriosam iure minus ea in dolorum?"
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi"
   },
   {
     "courseId": 2,
-    "title": "Front-End",
-    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi, excepturi cumque inventore voluptatibus id aspernatur autem perferendis fugit maxime iste labore, laboriosam iure minus ea in dolorum?"
+    "title": "Web Development",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi"
   },
   {
     "courseId": 3,
     "title": "Alghoritms",
-    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi, excepturi cumque inventore voluptatibus id aspernatur autem perferendis fugit maxime iste labore, laboriosam iure minus ea in dolorum?"
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi"
   },
   {
     "courseId": 4,
-    "title": "Back-end",
-    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi, excepturi cumque inventore voluptatibus id aspernatur autem perferendis fugit maxime iste labore, laboriosam iure minus ea in dolorum?"
+    "title": "Software Development",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi"
   },
   {
     "courseId": 5,
     "title": "Data Structure",
-    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi, excepturi cumque inventore voluptatibus id aspernatur autem perferendis fugit maxime iste labore, laboriosam iure minus ea in dolorum?"
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi"
+  },
+  {
+    "courseId": 6,
+    "title": "Comunicate",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi"
+  },
+  {
+    "courseId": 7,
+    "title": "Presentation Skills",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi"
+  },
+  {
+    "courseId": 8,
+    "title": "Business",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi"
+  },
+  {
+    "courseId": 9,
+    "title": "Design",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi"
   }
 ]

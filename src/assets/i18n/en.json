@@ -3,7 +3,7 @@
     "home": "Home",
     "courses": "Courses",
     "create_courses": "Create Courses",
-    "sign_in": "Sign In"
+    "sign_in": "Login/Register"
   },
   "landing_page": {
     "banner": {
@@ -36,7 +36,7 @@
     }
   },
   "buttons": {
-    "banner_button": "View all categories",
+    "banner_button": "Explore Courses",
     "sign_in_button": "Sign In",
     "register_button": "Register",
     "create_acc_button": "Create an account"
