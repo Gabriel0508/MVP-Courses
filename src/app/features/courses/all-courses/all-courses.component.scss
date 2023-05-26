@@ -1,0 +1,12 @@
+@import "/src/assets/styles/variables";
+
+.search {
+  right: 1.5rem;
+  bottom: 0.5rem;
+  cursor: pointer;
+  .fa-search {
+    &:hover {
+      color: $light-blue;
+    }
+  }
+}

@@ -31,11 +31,12 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: transparent linear-gradient(45deg, #0097b9 0%, #8769ae 100%) 0 0
-  no-repeat padding-box;;
+  no-repeat padding-box;
+  border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: transparent linear-gradient(45deg, #0097b9 0%, #8769ae 100%) 0 0
-  no-repeat padding-box;;
+  no-repeat padding-box;
 }
