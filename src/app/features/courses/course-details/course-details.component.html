@@ -1,35 +1,270 @@
 <app-header></app-header>
-<app-layout-template>
-  <div class="card" *ngIf="course">
-    <div class="card-header">
-      {{ course.title }}
+
+<app-banner
+  *ngIf="course"
+  [title]="course.title"
+  [home]="'Home'"
+  [courses]="'Courses'"
+  [courseCategory]="'Design'"
+  [courseTitle]="course.title"
+  (navigateHome)="onNavigateHome($event)"
+  (navigateToCourses)="onNavigateToCourses($event)"
+  (navigateToCourseDet)="onNavigateToCourseDetails($event)"
+></app-banner>
+
+<app-layout-template *ngIf="course">
+  <!--Course header-->
+  <div class="header">
+    <div class="d-flex w-50 justify-content-between">
+      <p>Ali Tufan</p>
+      <p>Created / Updated 22 December 2019</p>
     </div>
-    <div class="card-body">
-      <p>{{ course.description }}</p>
-    </div>
-    <div class="card-footer">
-      <button class="btn btn-blue" type="button" (click)="onBack('/courses')"><i class="fa fa-arrow-left me-2"></i>
-        Back to courses list
-      </button>
+    <div class="py-2">Rating *****</div>
+    <div class="title py-2">
+      <h1 class="fw-bold">{{ course.title }}</h1>
     </div>
   </div>
 
-  <!--TODO: use app-course-card component, navigate back to courses-->
-  <!-- <app-course-card *ngIf="course" [title]="course.title" [description]="course.description">
+  <!--Course preview-->
+  <div class="course-preview mt-3">
+    <div class="row">
+      <div class="col-sm-12 col-lg-9 border">Preview here</div>
+      <div class="col-sm-12 col-lg-3">
+        <div class="card shadow">
+          <div class="card-header fw-bold">Course Features</div>
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <p>Lectures</p>
+              <p>88</p>
+            </div>
 
-  </app-course-card> -->
+            <div class="d-flex justify-content-between">
+              <p>Quizzes</p>
+              <p>1</p>
+            </div>
 
-  <div class="card" *ngIf="providedCourse">
-    <div class="card-header">
-      {{ providedCourse.title }}
+            <div class="d-flex justify-content-between">
+              <p>Duration</p>
+              <p>3 hours</p>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <p>Skill level</p>
+              <p>All level</p>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <p>Language</p>
+              <p>English</p>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <p>Assessments</p>
+              <p>Yes</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="card-body">
-      <p>{{ providedCourse.description }}</p>
+  </div>
+
+  <!--Course overview-->
+  <div class="row">
+    <div class="col-lg-9">
+      <div class="card mt-4">
+        <div class="card-header">
+          <h3>Course Overview</h3>
+        </div>
+        <div class="card-body py-4">
+          <div class="description">
+            <h5 class="fw-bold py-2">Course Description</h5>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat
+              maiores officia ea quisquam recusandae incidunt quam. Illum
+              consectetur nisi tenetur similique voluptate! Molestias sed esse
+              deleniti provident. Veritatis praesentium omnis voluptate illum
+              quo dolore sit in, nisi recusandae delectus aliquam! Eligendi nam
+              officia excepturi ad suscipit natus sunt? Vitae, ducimus?
+            </p>
+            <p>
+              {{ course.description }}
+            </p>
+          </div>
+
+          <div class="learn">
+            <h5 class="fw-bold py-2">What you'll learn</h5>
+            <p>
+              <i class="fa fa-check me-3"></i>
+              Become an Algorithms expert
+            </p>
+            <p>
+              <i class="fa fa-check me-3"></i>
+              Build & test a full website design.
+            </p>
+            <p>
+              <i class="fa fa-check me-3"></i>
+              Learn to design websites & mobile phone apps.
+            </p>
+            <p>
+              <i class="fa fa-check me-3"></i>
+              Export production ready assets.
+            </p>
+            <p>
+              <i class="fa fa-check me-3"></i>
+              You'll learn how to choose colors.
+            </p>
+            <p>
+              <i class="fa fa-check me-3"></i>
+              Build & test a full mobile app.
+            </p>
+          </div>
+
+          <div class="requirements">
+            <h5 class="fw-bold py-2">Requirements</h5>
+            <p>
+              <i class="fa fa-circle me-3"></i>
+              You will need a copy of VSC 2019 or above.
+            </p>
+            <p>
+              <i class="fa fa-circle me-3"></i>
+              No previous algorithms experience is needed.
+            </p>
+            <p>
+              <i class="fa fa-circle me-3"></i>
+              No previous programming skills are needed.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="card-footer">
-      <button class="btn btn-blue" type="button" (click)="onBack('/courses')"><i class="fa fa-arrow-left me-2"></i>
-        Back to courses list
-      </button>
+  </div>
+</app-layout-template>
+
+<!--TODO: refact-->
+<app-layout-template *ngIf="providedCourse">
+  <!--Course header-->
+  <div class="header">
+    <div class="d-flex w-50 justify-content-between">
+      <p>Ali Tufan</p>
+      <p>Created / Updated 22 December 2019</p>
+    </div>
+    <div class="py-2">Rating *****</div>
+    <div class="title py-2">
+      <h1 class="fw-bold">{{ providedCourse.title }}</h1>
+    </div>
+  </div>
+
+  <!--Course preview-->
+  <div class="course-preview mt-3">
+    <div class="row">
+      <div class="col-sm-12 col-lg-9 border">Preview here</div>
+      <div class="col-sm-12 col-lg-3">
+        <div class="card shadow">
+          <div class="card-header fw-bold">Course Features</div>
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <p>Lectures</p>
+              <p>88</p>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <p>Quizzes</p>
+              <p>1</p>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <p>Duration</p>
+              <p>3 hours</p>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <p>Skill level</p>
+              <p>All level</p>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <p>Language</p>
+              <p>English</p>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <p>Assessments</p>
+              <p>Yes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Course overview-->
+  <div class="row">
+    <div class="col-lg-9">
+      <div class="card mt-4">
+        <div class="card-header">
+          <h3>Course Overview</h3>
+        </div>
+        <div class="card-body py-4">
+          <div class="description">
+            <h5 class="fw-bold py-2">Course Description</h5>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat
+              maiores officia ea quisquam recusandae incidunt quam. Illum
+              consectetur nisi tenetur similique voluptate! Molestias sed esse
+              deleniti provident. Veritatis praesentium omnis voluptate illum
+              quo dolore sit in, nisi recusandae delectus aliquam! Eligendi nam
+              officia excepturi ad suscipit natus sunt? Vitae, ducimus?
+            </p>
+            <p>
+              {{ providedCourse.description }}
+            </p>
+          </div>
+
+          <div class="learn">
+            <h5 class="fw-bold py-2">What you'll learn</h5>
+            <p>
+              <i class="fa fa-check me-3"></i>
+              Become an Algorithms expert
+            </p>
+            <p>
+              <i class="fa fa-check me-3"></i>
+              Build & test a full website design.
+            </p>
+            <p>
+              <i class="fa fa-check me-3"></i>
+              Learn to design websites & mobile phone apps.
+            </p>
+            <p>
+              <i class="fa fa-check me-3"></i>
+              Export production ready assets.
+            </p>
+            <p>
+              <i class="fa fa-check me-3"></i>
+              You'll learn how to choose colors.
+            </p>
+            <p>
+              <i class="fa fa-check me-3"></i>
+              Build & test a full mobile app.
+            </p>
+          </div>
+
+          <div class="requirements">
+            <h5 class="fw-bold py-2">Requirements</h5>
+            <p>
+              <i class="fa fa-circle me-3"></i>
+              You will need a copy of VSC 2019 or above.
+            </p>
+            <p>
+              <i class="fa fa-circle me-3"></i>
+              No previous algorithms experience is needed.
+            </p>
+            <p>
+              <i class="fa fa-circle me-3"></i>
+              No previous programming skills are needed.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </app-layout-template>

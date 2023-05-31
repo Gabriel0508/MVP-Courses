@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-course-card',
-  templateUrl: './course-card.component.html',
-  styleUrls: ['./course-card.component.scss'],
+  selector: 'app-generic-card',
+  templateUrl: './generic-card.component.html',
+  styleUrls: ['./generic-card.component.scss']
 })
-export class CourseCardComponent implements OnInit {
+export class GenericCardComponent implements OnInit{
   @Output() courseDetails = new EventEmitter<number>();
   @Input() courseImage: string = '';
   @Input() title: string = '';

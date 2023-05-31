@@ -40,7 +40,7 @@ export class CourseDetailsComponent implements OnInit {
 
   /**
    * Method to get the provided course
-   * @param id 
+   * @param id
    */
   onGetProvidedCourse(id: number): void {
     this.courseService.getProvidedCourse(id).subscribe({
@@ -49,7 +49,18 @@ export class CourseDetailsComponent implements OnInit {
     });
   }
 
-  onBack(url: string): void {
-    this.router.navigateByUrl(url);
+  onNavigateHome(url: string): void {
+    const home = `/`;
+    this.router.navigateByUrl(home);
+  }
+
+  onNavigateToCourses(course: string) {
+    const courses = `/courses`;
+    this.router.navigateByUrl(courses);
+  }
+
+  onNavigateToCourseDetails(det: string) {
+    // const details = `/courses`
+    // this.router.navigateByUrl(details);
   }
 }

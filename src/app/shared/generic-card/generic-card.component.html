@@ -1,0 +1,12 @@
+<div class="card" (click)="onCourseDetails()">
+  <img
+    class="card-img"
+    src="../../../assets/images/{{ courseImage }}.png"
+    alt="{{ title }}"
+  />
+  <div class="overlay"></div>
+  <div class="card-body d-flex flex-column align-items-center">
+    <h5 class="card-title text-white fw-bold">{{ title }}</h5>
+    <p class="card-text text-white">{{ description }}</p>
+  </div>
+</div>

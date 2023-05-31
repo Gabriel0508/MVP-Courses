@@ -7,8 +7,7 @@
   },
   "landing_page": {
     "banner": {
-      "enjoy": "Enjoy",
-      "online": "Online Learning",
+      "title": "Enjoy Online Learning",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, quia voluptas deserunt corrupti est sequi consectetur pariatur illo dolorum ducimus."
     }
   },
@@ -36,7 +35,7 @@
     }
   },
   "buttons": {
-    "banner_button": "Explore Courses",
+    "banner_button": "Get Started",
     "sign_in_button": "Sign In",
     "register_button": "Register",
     "create_acc_button": "Create an account"

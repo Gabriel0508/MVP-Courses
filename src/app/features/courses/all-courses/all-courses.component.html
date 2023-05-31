@@ -1,4 +1,12 @@
 <app-header></app-header>
+<app-banner
+  [title]="'Accesa MVP'"
+  [home]="'Home'"
+  [courses]="'Courses'"
+  [courseCategory]="'Design'"
+  (navigateHome)="onNavigateHome($event)"
+  (navigateToCourses)="onNavigateToCourses($event)"
+></app-banner>
 
 <app-layout-template>
   <!--Searching courses-->
@@ -8,6 +16,7 @@
         <strong>{{ courses.length }}</strong> Courses categories
       </p>
     </div>
+
     <div class="col-lg-8">
       <!--TODO: the filter part-->
       <form [formGroup]="searchForm">
@@ -29,8 +38,14 @@
               placeholder="Search courses"
               class="form-control"
               formControlName="search"
+              [(ngModel)]="listFilter"
+              required
             />
-            <div class="search position-absolute">
+            <!-- (input)="keyWord.next($event)" -->
+            <div
+              class="search position-absolute"
+              *ngIf="searchForm.controls['search'].value"
+            >
               <i class="fa fa-search text-dark-blue"></i>
             </div>
           </div>
@@ -41,10 +56,10 @@
 
   <!--Courses Cards-->
   <div class="row g-4 mt-3">
-    <div class="col-sm-12 col-lg-3" *ngFor="let course of courses">
+    <div class="col-sm-12 col-lg-3" *ngFor="let course of filteredCourses">
       <app-course-card
         [courseId]="course.courseId"
-        [courseImage]="'/assets/images/accesa.avif'"
+        [courseImage]="course.courseImage"
         [title]="course.title"
         [description]="course.description"
         (courseDetails)="onCourseDetails($event)"
