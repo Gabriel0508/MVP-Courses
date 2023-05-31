@@ -2,6 +2,7 @@ $blue: #0097b9;
 $dark-blue: #283b41;
 $light-blue: #0fa3b1;
 $white: #fff;
+$gray: #dadada;
 
 $app-colors: () !default;
 $app-colors: map-merge(
@@ -10,6 +11,7 @@ $app-colors: map-merge(
     "dark-blue": $dark-blue,
     "light-blue": $light-blue,
     "white": $white,
+    "gray": $gray
   ),
   $app-colors
 );

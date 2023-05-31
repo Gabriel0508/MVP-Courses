@@ -9,7 +9,8 @@ import { CourseCardComponent } from './course-card/course-card.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { BannerComponent } from './banner/banner.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { GenericCardComponent } from './generic-card/generic-card.component'
+import { GenericCardComponent } from './generic-card/generic-card.component';
+import { FooterComponent } from './footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { GenericCardComponent } from './generic-card/generic-card.component'
     LayoutTemplateComponent,
     CourseCardComponent,
     BannerComponent,
-    GenericCardComponent
+    GenericCardComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +28,6 @@ import { GenericCardComponent } from './generic-card/generic-card.component'
     TranslateModule,
     BrowserAnimationsModule
   ],
-  exports: [HeaderComponent, LayoutTemplateComponent, CourseCardComponent, BannerComponent, GenericCardComponent]
+  exports: [HeaderComponent, LayoutTemplateComponent, CourseCardComponent, BannerComponent, GenericCardComponent, FooterComponent]
 })
 export class SharedModule { }

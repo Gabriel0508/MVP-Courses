@@ -1,0 +1,19 @@
+.footer {
+  background: transparent linear-gradient(45deg, #0097b9 0%, #8769ae 100%) 0 0
+    no-repeat padding-box;
+  width: 100%;
+  height: auto;
+  .container {
+    width: 100%;
+    height: auto;
+    .text {
+      .link {
+        transition: all 0.25s ease-in-out;
+        &:hover {
+          color: white;
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+}
