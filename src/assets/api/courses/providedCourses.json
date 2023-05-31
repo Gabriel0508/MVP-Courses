@@ -1,22 +1,65 @@
 [
   {
     "courseId": 10,
-    "title": "Human Resources",
-    "description": "lorem10"
+    "title": "Dev-Ops",
+    "description": "Over 500 Courses",
+    "url": "DevOps",
+    "courseImage": "dev-ops"
   },
   {
     "courseId": 11,
-    "title": "Professional Development",
-    "description": "lorem10"
+    "title": "Web Development",
+    "description": "Over 500 Courses",
+    "url": "WebDevelopment",
+    "courseImage": "web-dev"
   },
   {
     "courseId": 12,
-    "title": "Training and Education",
-    "description": "lorem10"
+    "title": "Alghoritms",
+    "description": "Over 500 Courses",
+    "url": "Alghoritms",
+    "courseImage": "algorithms"
   },
   {
     "courseId": 13,
-    "title": "Training and Education",
-    "description": "lorem10"
+    "title": "Software Development",
+    "description": "Over 500 Courses",
+    "url": "SoftwareDevelopment",
+    "courseImage": "software"
+  },
+  {
+    "courseId": 14,
+    "title": "Data Structure",
+    "description": "Over 500 Courses",
+    "url": "DataStructure",
+    "courseImage": "data"
+  },
+  {
+    "courseId": 15,
+    "title": "Communicate",
+    "description": "Over 500 courses",
+    "url": "Communicate",
+    "courseImage": "communication"
+  },
+  {
+    "courseId": 16,
+    "title": "Presentation Skills",
+    "description": "Over 500 courses",
+    "url": "PresentationSkills",
+    "courseImage": "Presentation-Skills"
+  },
+  {
+    "courseId": 17,
+    "title": "Business",
+    "description": "Over 500 courses",
+    "url": "Bussines",
+    "courseImage": "business"
+  },
+  {
+    "courseId": 18,
+    "title": "Design",
+    "description": "Over 500 Courses",
+    "url": "Design",
+    "courseImage": "logo-design"
   }
 ]

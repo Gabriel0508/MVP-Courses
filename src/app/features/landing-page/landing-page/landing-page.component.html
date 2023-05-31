@@ -1,26 +1,10 @@
 <app-header></app-header>
-
-<!--Home background-->
-<div class="home">
-  <div class="container d-flex flex-column justify-content-center h-100">
-    <h1 class="text-dark-blue">
-      {{ "landing_page.banner.enjoy" | translate }}
-      <strong class="text-dark-blue">{{ "landing_page.banner.online" | translate }}</strong>
-    </h1>
-    <p class="mt-2 text-dark-blue fw-bold">
-      {{ "landing_page.banner.description" | translate }}
-    </p>
-    <div class="more-btn mt-3">
-      <button
-        class="btn btn-blue rounded-pill mt-2 px-4"
-        (click)="onNavigateTo('/courses')"
-      >
-        {{ "buttons.banner_button" | translate }}
-        <i class="fa fa-arrow-right ms-2"></i>
-      </button>
-    </div>
-  </div>
-</div>
+<app-banner
+  [title]="translate.instant('landing_page.banner.title')"
+  [description]="translate.instant('landing_page.banner.description')"
+  [home]="translate.instant('buttons.banner_button')"
+  (navigateHome)="onNavigateToCourses($event)"
+></app-banner>
 
 <app-layout-template>
   <!--Provided Courses-->
@@ -33,66 +17,19 @@
         {{ "categories.provided_description" | translate }}
       </p>
     </div>
-    <div class="row g-2">
+    <div class="row g-4">
       <div
-        class="col-sm-12 col-lg-3"
+        class="col-sm-12 col-md-6 col-lg-3"
         *ngFor="let providedCourse of providedCourses"
       >
-        <app-course-card
+        <app-generic-card
           [courseId]="providedCourse.courseId"
-          [courseImage]="'/assets/images/accesa.avif'"
+          [courseImage]="providedCourse.courseImage"
           [title]="providedCourse.title"
           [description]="providedCourse.description"
           (courseDetails)="onCourseDetails($event)"
         >
-        </app-course-card>
-      </div>
-    </div>
-  </div>
-
-  <!--Popular Courses-->
-  <div class="popular-courses mt-5">
-    <div
-      class="d-flex flex-column justify-content-center align-items-center py-2"
-    >
-      <h1 class="text-dark-blue">
-        {{ "categories.popular_courses" | translate }}
-      </h1>
-    </div>
-    <div class="row g-2">
-      <div
-        class="col-sm-12 col-lg-3"
-        *ngFor="let providedCourse of providedCourses"
-      >
-        <app-course-card
-          [courseId]="providedCourse.courseId"
-          [courseImage]="'/assets/images/profile-img.webp'"
-          [title]="providedCourse.title"
-          [description]="providedCourse.description"
-          (courseDetails)="onCourseDetails($event)"
-        >
-        </app-course-card>
-      </div>
-    </div>
-  </div>
-
-  <!--Trainers-->
-  <div class="trainers mt-5">
-    <div class="d-flex flex-column justify-content-center align-items-center">
-      <h1 class="text-dark-blue">{{ "categories.trainers" | translate }}</h1>
-      <p class="text-blue">
-        {{ "categories.trainers_description" | translate }}
-      </p>
-    </div>
-    <div class="row g-2">
-      <div class="col-sm-12 col-lg-3">
-        <div class="card shadow">
-          <img
-            src="/assets/images/profile-img.webp"
-            class="card-img-top"
-            alt="course"
-          />
-        </div>
+        </app-generic-card>
       </div>
     </div>
   </div>

@@ -65,7 +65,7 @@ export class CreateCourseComponent implements OnInit, OnDestroy {
    */
   onCreateCourse(): void {
     if (this.createCourseForm.valid) {
-      alert('Success');
+      alert('The course was created');
     }
     this.onNavigateTo('/courses');
   }

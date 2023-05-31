@@ -2,46 +2,65 @@
   {
     "courseId": 1,
     "title": "Dev-Ops",
-    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi"
+    "category": "Dev-Ops",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi",
+    "url": "DevOps",
+    "courseImage": "dev-ops"
   },
   {
     "courseId": 2,
     "title": "Web Development",
-    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi"
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi",
+    "url": "WebDevelopment",
+    "courseImage": "web-dev"
   },
   {
     "courseId": 3,
     "title": "Alghoritms",
-    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi"
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi",
+    "url": "Alghoritms",
+    "courseImage": "algorithms"
   },
   {
     "courseId": 4,
     "title": "Software Development",
-    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi"
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi",
+    "url": "SoftwareDevelopment",
+    "courseImage": "software"
   },
   {
     "courseId": 5,
     "title": "Data Structure",
-    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi"
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi",
+    "url": "DataStructure",
+    "courseImage": "data"
   },
   {
     "courseId": 6,
-    "title": "Comunicate",
-    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi"
+    "title": "Communicate",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi",
+    "url": "Communicate",
+    "courseImage": "communication"
   },
   {
     "courseId": 7,
     "title": "Presentation Skills",
-    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi"
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi",
+    "url": "PresentationSkills",
+    "courseImage": "Presentation-Skills"
   },
   {
     "courseId": 8,
     "title": "Business",
-    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi"
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi",
+    "url": "Bussines",
+    "courseImage": "business"
   },
   {
     "courseId": 9,
     "title": "Design",
-    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi"
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi",
+    "url": "Design",
+    "courseImage": "logo-design"
   }
 ]
