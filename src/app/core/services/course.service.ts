@@ -1,5 +1,5 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, catchError, map, tap, throwError } from 'rxjs';
+import { Observable, catchError, map, shareReplay, tap, throwError } from 'rxjs';
 import { ICourse } from '../models/course.model';
 import { Injectable } from '@angular/core';
 
@@ -18,7 +18,8 @@ export class CourseService {
    */
   getCourses(): Observable<ICourse[]> {
     return this.httpClient.get<ICourse[]>(this.courseUrl).pipe(
-      tap((data) => console.log('All', data)),
+      tap((data) => data),
+      shareReplay(),
       catchError(this.handleError)
     );
   }
@@ -29,7 +30,8 @@ export class CourseService {
    */
   getProvidedCourses(): Observable<ICourse[]> {
     return this.httpClient.get<ICourse[]>(this.providedCourses).pipe(
-      tap((data) => console.log('All', data)),
+      tap((data) => data),
+      shareReplay(),
       catchError(this.handleError)
     );
   }

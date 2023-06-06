@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
 import { ICourse } from 'src/app/core/models/course.model';
 import { CourseService } from 'src/app/core/services/course.service';
@@ -22,7 +23,8 @@ export class CreateCourseComponent implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private validationsService: ValidationsService,
     private router: Router,
-    private courseService: CourseService
+    private courseService: CourseService,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -64,9 +66,18 @@ export class CreateCourseComponent implements OnInit, OnDestroy {
    * Method to submit the login form
    */
   onCreateCourse(): void {
-    if (this.createCourseForm.valid) {
-      alert('The course was created');
+    if (this.courses.find((item) => item.title === this.createCourseForm.controls['title'].value)) {
+      this.showError();
+      return;
     }
+
+    if (this.createCourseForm.valid) {
+      this.courses.push(this.createCourseForm.value);
+      console.log(this.createCourseForm.value);
+
+      this.showSuccess();
+    }
+
     this.onNavigateTo('/courses');
   }
 
@@ -89,5 +100,31 @@ export class CreateCourseComponent implements OnInit, OnDestroy {
    */
   private onNavigateTo(url: string): void {
     this.router.navigateByUrl(url);
+  }
+
+  /**
+   * Method to show the success notification
+   */
+  private showSuccess(): void {
+    this.toastr.success(
+      'Check again the courses!',
+      `The ${this.createCourseForm.controls['title'].value} course was created`,
+      {
+        timeOut: 5000,
+      }
+    );
+  }
+
+  /**
+   * Merthod to show the error notification
+   */
+  private showError(): void {
+    this.toastr.error(
+      'Check again the course name!',
+      `The ${this.createCourseForm.controls['title'].value} course title already exist`,
+      {
+        timeOut: 5000,
+      }
+    );
   }
 }

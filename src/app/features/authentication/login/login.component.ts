@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ValidationsService } from 'src/app/core/services/validations.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private validationsService: ValidationsService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -48,8 +50,9 @@ export class LoginComponent implements OnInit {
    */
    onSubmit(): void {
     if (this.loginForm.valid) {
-      alert('Success');
+      this.showSuccess();
     }
+    this.router.navigateByUrl('/')
   }
 
   /**
@@ -60,5 +63,18 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
     });
+  }
+
+  /**
+   * Method to show the notification
+   */
+  private showSuccess(): void {
+    this.toastr.success(
+      'Check our courses categories that we provided!',
+      `Welcome back ${this.loginForm.controls['email'].value}`,
+      {
+        timeOut: 5000,
+      }
+    );
   }
 }

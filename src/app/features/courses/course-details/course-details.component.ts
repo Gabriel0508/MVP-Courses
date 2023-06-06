@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ICourse } from 'src/app/core/models/course.model';
 import { CourseService } from 'src/app/core/services/course.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-course-details',
@@ -12,12 +13,18 @@ export class CourseDetailsComponent implements OnInit {
   course: ICourse | undefined;
   providedCourse: ICourse | undefined;
   errorMessage = '';
+  safeSrc: SafeResourceUrl;
 
   constructor(
     private route: ActivatedRoute,
     private courseService: CourseService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private sanitizer: DomSanitizer
+  ) {
+    this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(
+      'https://www.youtube.com/embed/c9F5kMUfFKk'
+    );
+  }
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));

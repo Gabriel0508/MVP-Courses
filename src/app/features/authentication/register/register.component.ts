@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  UntypedFormBuilder,
+  Validators,
+} from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ValidationsService } from 'src/app/core/services/validations.service';
 
 @Component({
@@ -10,7 +17,12 @@ import { ValidationsService } from 'src/app/core/services/validations.service';
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup = new FormGroup({});
 
-  constructor(private validationsService: ValidationsService, private fb: FormBuilder) {}
+  constructor(
+    private validationsService: ValidationsService,
+    private fb: UntypedFormBuilder,
+    private toastr: ToastrService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.onInitRegisterForm();
@@ -29,12 +41,12 @@ export class RegisterComponent implements OnInit {
     );
   }
 
-   /**
+  /**
    * Method to submit the login form
    */
-   onSubmit(): void {
+  onSubmit(): void {
     if (this.registerForm.valid) {
-      alert('Success');
+      this.showSuccess();
     }
   }
 
@@ -48,5 +60,23 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
     });
+  }
+
+  /**
+   * Method to show the notification
+   */
+  private showSuccess(): void {
+    this.toastr.success(
+      'Check our courses categories that we provided!',
+      `Welcome ${
+        this.registerForm.controls['firstName'].value +
+        ' ' +
+        this.registerForm.controls['lastName'].value
+      } to the MVP Courses`,
+      {
+        timeOut: 5000,
+      }
+    );
+    this.router.navigateByUrl('/');
   }
 }
