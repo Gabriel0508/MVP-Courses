@@ -80,9 +80,9 @@ export class AllCoursesComponent implements OnInit, OnDestroy {
    * @returns 
    */
   filterCourses(filterBy: string): ICourse[] {
-    filterBy = filterBy.toUpperCase();
+    filterBy = filterBy.toLowerCase();
     return this.courses.filter((course: ICourse) =>
-      course.title.includes(filterBy)
+      course.category.includes(filterBy)
     );
   }
 

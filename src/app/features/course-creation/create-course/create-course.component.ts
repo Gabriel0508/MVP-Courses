@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -24,7 +25,8 @@ export class CreateCourseComponent implements OnInit, OnDestroy {
     private validationsService: ValidationsService,
     private router: Router,
     private courseService: CourseService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {
@@ -71,9 +73,11 @@ export class CreateCourseComponent implements OnInit, OnDestroy {
       return;
     }
 
+    const newCourse = this.createCourseForm.value;
+
     if (this.createCourseForm.valid) {
-      this.courses.push(this.createCourseForm.value);
-      console.log(this.createCourseForm.value);
+      // const createCourse$ = this.http.post('/assets/api/courses/courses.json', newCourse);
+      // createCourse$.subscribe();
 
       this.showSuccess();
     }

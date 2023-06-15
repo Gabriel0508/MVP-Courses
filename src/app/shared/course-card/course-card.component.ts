@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class CourseCardComponent implements OnInit {
   @Output() courseDetails = new EventEmitter<number>();
   @Input() courseImage: string = '';
+  @Input() category: string = '';
   @Input() title: string = '';
   @Input() description = '';
   @Input() courseId: number = -1;

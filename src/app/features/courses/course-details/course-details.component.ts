@@ -11,7 +11,6 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class CourseDetailsComponent implements OnInit {
   course: ICourse | undefined;
-  providedCourse: ICourse | undefined;
   errorMessage = '';
   safeSrc: SafeResourceUrl;
 
@@ -28,9 +27,11 @@ export class CourseDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    if (id) {
+    const url = this.route.snapshot.paramMap.get('url');
+    if (id) {      
       this.onGetCourse(id);
-      this.onGetProvidedCourse(id);
+    } else if (url) {
+      this.onGetCourseUrl(url);
     }
   }
 
@@ -45,13 +46,9 @@ export class CourseDetailsComponent implements OnInit {
     });
   }
 
-  /**
-   * Method to get the provided course
-   * @param id
-   */
-  onGetProvidedCourse(id: number): void {
-    this.courseService.getProvidedCourse(id).subscribe({
-      next: (providedCourse) => (this.providedCourse = providedCourse),
+  onGetCourseUrl(url: string): void {
+    this.courseService.getCourseUrl(url).subscribe({
+      next: (course) => (this.course = course),
       error: (err) => (this.errorMessage = err),
     });
   }

@@ -1,64 +1,72 @@
 [
   {
     "courseId": 1,
-    "title": "Dev-Ops",
     "category": "Dev-Ops",
-    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi",
-    "url": "DevOps",
+    "title": "How to learn fast and develop real apps",
+    "description": "Over 500 Courses",
+    "url": "Dev-Ops",
     "courseImage": "dev-ops"
   },
   {
     "courseId": 2,
-    "title": "Web Development",
+    "category": "Web Development",
+    "title": "Become a master in building responsive apps",
     "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi",
-    "url": "WebDevelopment",
+    "url": "Web-Development",
     "courseImage": "web-dev"
   },
   {
     "courseId": 3,
-    "title": "Alghoritms",
+    "category": "Alghoritms",
+    "title": "Alghoritms and Data Structures",
     "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi",
     "url": "Alghoritms",
     "courseImage": "algorithms"
   },
   {
     "courseId": 4,
-    "title": "Software Development",
+    "category": "Software Development",
+    "title": "Software Development - The Complete Guide",
     "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi",
-    "url": "SoftwareDevelopment",
+    "url": "Software-Development",
     "courseImage": "software"
   },
   {
     "courseId": 5,
-    "title": "Data Structure",
+    "category": "Data Structure",
+    "title": "Establish a solid layer of fundamentals",
     "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi",
-    "url": "DataStructure",
+    "url": "Data-Structure",
     "courseImage": "data"
   },
   {
     "courseId": 6,
-    "title": "Communicate",
+    "category": "Communicate",
+    "title": "Learn Web Communicate Fundamentals and apply them",
     "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi",
     "url": "Communicate",
     "courseImage": "communication"
   },
   {
     "courseId": 7,
-    "title": "Presentation Skills",
+    "category": "Presentation Skills",
+    "title": "Complete Guide to Presentation Skills",
     "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi",
     "url": "PresentationSkills",
     "courseImage": "Presentation-Skills"
   },
   {
     "courseId": 8,
-    "title": "Business",
+    "category": "Business",
+    "title": "Build your own Business",
     "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi",
     "url": "Bussines",
     "courseImage": "business"
   },
   {
     "courseId": 9,
-    "title": "Design",
+    "category": "Design",
+    "title": "Building Your First  Design from sratch",
     "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat incidunt hic commodi",
     "url": "Design",
     "courseImage": "logo-design"
