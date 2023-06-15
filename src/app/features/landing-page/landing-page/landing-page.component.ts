@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription, catchError, map } from 'rxjs';
 import { ICourse } from 'src/app/core/models/course.model';
 import { CourseService } from 'src/app/core/services/course.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -13,8 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class LandingPageComponent implements OnInit, OnDestroy {
   sub: Subscription | undefined;
   errorMessage = '';
-
-  providedCourses: ICourse[] = [];
+  courses: ICourse[] = [];
 
   constructor(
     private router: Router,
@@ -23,7 +22,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.onGetProvidedCourses();
+    this.onGetCourses();
   }
 
   ngOnDestroy(): void {
@@ -31,15 +30,36 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Method to get the provided Courses
+   * Method to get the Courses
    */
-  onGetProvidedCourses(): void {
-    this.sub = this.courseService.getProvidedCourses().subscribe({
-      next: (providedCourses) => {
-        this.providedCourses = providedCourses;
+  onGetCourses(): void {
+    this.sub = this.courseService.getCourses().subscribe({
+      next: (courses) => {
+        this.courses = courses;
       },
       error: (err) => (this.errorMessage = err),
     });
+
+    // const courses$ = this.courseService.getCourses().pipe(
+    //   map((courses) => courses.sort(sortCoursesByCategory)),
+    //   catchError((err) => (this.errorMessage = err))
+    // );
+
+    // this.webCourses$ = courses$.pipe(
+    //   map((courses) => {
+    //     courses.filter((courses) => courses.category == 'Web-Dev');
+    //   })
+    // );
+
+    // this.courseService.getCourses().subscribe((res) => {
+    //   const courses: ICourse[] = res.sort(sortCoursesByCategory);
+
+    //   this.webCourses = courses.filter(
+    //     (course) => course.category == 'Web Development'
+    //   );
+
+    //this.advancedCourses = courses.filter(course => course.category == "ADVANCED");
+    //});
   }
 
   /**
@@ -53,10 +73,10 @@ export class LandingPageComponent implements OnInit, OnDestroy {
 
   /**
    * Method to navigate to the details of course
-   * @param id
+   * @param url
    */
-  onCourseDetails(id: number): void {
-    const courseId = `/courses/${id}`;
-    this.router.navigateByUrl(courseId);
+  onCourseDetails(url: string): void {
+    //const courseUrl = `/courses/${url}`;
+    this.router.navigateByUrl('/courses');
   }
 }

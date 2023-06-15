@@ -3,7 +3,6 @@
   [title]="'Accesa MVP'"
   [home]="'Home'"
   [courses]="'Courses'"
-  [courseCategory]="'Design'"
   (navigateHome)="onNavigateHome($event)"
   (navigateToCourses)="onNavigateToCourses($event)"
 ></app-banner>
@@ -28,7 +27,7 @@
                 [value]="course"
                 [selected]="course === courses[0]"
               >
-                {{ course.title }}
+                {{ course.category }}
               </option>
             </select>
           </div>
@@ -60,6 +59,7 @@
       <app-course-card
         [courseId]="course.courseId"
         [courseImage]="course.courseImage"
+        [category]="course.category"
         [title]="course.title"
         [description]="course.description"
         (courseDetails)="onCourseDetails($event)"

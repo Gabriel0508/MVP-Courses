@@ -8,6 +8,7 @@ import {
   debounceTime,
   distinct,
   distinctUntilChanged,
+  filter,
   pipe,
   takeUntil,
 } from 'rxjs';
@@ -76,13 +77,13 @@ export class AllCoursesComponent implements OnInit, OnDestroy {
 
   /**
    * Method to filter the courses
-   * @param filterBy 
+   * @param category 
    * @returns 
    */
-  filterCourses(filterBy: string): ICourse[] {
-    filterBy = filterBy.toUpperCase();
+  filterCourses(category: string): ICourse[] {
+   category = category.toUpperCase();
     return this.courses.filter((course: ICourse) =>
-      course.title.includes(filterBy)
+      course.category.includes(category)
     );
   }
 

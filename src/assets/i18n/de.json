@@ -7,8 +7,7 @@
   },
   "landing_page": {
     "banner": {
-      "enjoy": "Genießen Sie",
-      "online": "Online Lernen",
+      "title": "Genießen Sie Online Lernen",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, quia voluptas deserunt corrupti est sequi consectetur pariatur illo dolorum ducimus."
     }
   },
@@ -20,7 +19,7 @@
     "trainers_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eos."
   },
   "authentication": {
-    "title": "Accesa MVP",
+    "title": "MVP",
     "first_name": "Vorname",
     "last_name": "Nachname",
     "email": "E-Mail Adresse",

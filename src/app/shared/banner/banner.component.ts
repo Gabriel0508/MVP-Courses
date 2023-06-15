@@ -14,8 +14,14 @@ import {
   animations: [
     trigger('fade', [
       transition('void => *', [
+        style({ opacity: 0, transform: 'translateY(-17px)' }),
+        animate(800, style({ opacity: 1, transform: 'translateY(0)' })),
+      ]),
+    ]),
+    trigger('fadeIn', [
+      transition('void => *', [
         style({ opacity: 0 }),
-        animate(1000, style({ opacity: 1 })),
+        animate(2000, style({ opacity: 1 })),
       ]),
     ]),
   ],
@@ -45,6 +51,7 @@ export class BannerComponent {
     this.navigateToCourses.emit(url);
   }
 
+  //TODO: after the category filter is done
   onNavigateToCourseDetails(url: string): void {
     this.navigateToCourseDet.emit(url);
   }

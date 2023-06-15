@@ -1,110 +1,104 @@
 <app-header></app-header>
 
 <app-layout-template>
-  <section>
-    <h1 class="logo text-center text-dark-blue fw-bold">Course creation</h1>
-
-    <div class="row mt-5">
-      <div class="col-sm-12 col-lg-6">
-        <form
-          [formGroup]="createCourseForm"
-          class="create-form d-flex flex-column justify-content-between"
-        >
-          <!--Category-->
-          <div class="row">
-            <div class="col-sm-6 col-lg-4">
-              <label class="form-label text-dark-blue">Category:</label>
-            </div>
-            <div class="col-sm-6 col-lg-8">
-              <select class="form-select" formControlName="category">
-                <option
-                  *ngFor="let course of courses"
-                  [value]="course"
-                  [selected]="course"
-                >
-                  {{ course.title }}
-                </option>
-              </select>
-            </div>
-          </div>
-
-          <!--Title-->
-          <div class="row">
-            <div class="col-sm-6 col-lg-4">
-              <label class="form-label text-dark-blue">Title:</label>
-            </div>
-            <div class="col-sm-6 col-lg-8">
-              <input
-                type="text"
-                placeholder="Title"
-                class="form-control position-relative"
-                formControlName="title"
-                required
-              />
-            </div>
-          </div>
-
-          <!--Description-->
-          <div class="row">
-            <div class="col-sm-6 col-lg-4">
-              <label class="form-label text-dark-blue">Description:</label>
-            </div>
-            <div class="col-sm-6 col-lg-8">
-              <textarea
-                type="text"
-                placeholder="Description"
-                class="form-control position-relative"
-                formControlName="description"
-                required
-              ></textarea>
-            </div>
-          </div>
-
-          <!--Created-->
-          <div class="row">
-            <div class="col-sm-6 col-lg-4">
-              <label class="form-label text-dark-blue">Created By:</label>
-            </div>
-            <div class="col-sm-6 col-lg-8">
-              <input
-                type="text"
-                placeholder="Name of creator"
-                class="form-control position-relative"
-                formControlName="createdBy"
-                required
-              />
-            </div>
-          </div>
-
-          <!--Duration-->
-          <div class="row">
-            <div class="col-sm-6 col-lg-4">
-              <label class="form-label text-dark-blue">Duration:</label>
-            </div>
-            <div class="col-sm-6 col-lg-8">
-              <input
-                type="number"
-                class="form-control position-relative"
-                formControlName="duration"
-                required
-              />
-            </div>
-          </div>
-
-          <!--Submit Button-->
-          <div class="create">
-            <button
-              class="btn btn-blue w-100"
-              type="submit"
-              [disabled]="createCourseForm.invalid || createCourseForm.pristine"
-              (click)="onCreateCourse()"
+  <section class="course-creation">
+    <form
+      [formGroup]="createCourseForm"
+      class="create-form d-flex flex-column justify-content-between p-5"
+    >
+      <h1 class="logo text-center text-blue fw-bold">Course creation</h1>
+      <!--Category-->
+      <div class="row">
+        <div class="col-sm-6 col-lg-6">
+          <label class="form-label text-dark-blue">Category:</label>
+        </div>
+        <div class="col-sm-6 col-lg-6">
+          <select class="form-select" formControlName="category">
+            <option
+              *ngFor="let course of courses"
+              [value]="course"
+              [selected]="course"
             >
-              Create course
-            </button>
-          </div>
-        </form>
+              {{ course.category }}
+            </option>
+          </select>
+        </div>
       </div>
-      <div class="col-6"></div>
-    </div>
+
+      <!--Title-->
+      <div class="row">
+        <div class="col-sm-6 col-lg-6">
+          <label class="form-label text-dark-blue">Title:</label>
+        </div>
+        <div class="col-sm-6 col-lg-6">
+          <input
+            type="text"
+            placeholder="Title"
+            class="form-control position-relative"
+            formControlName="title"
+            required
+          />
+        </div>
+      </div>
+
+      <!--Description-->
+      <div class="row">
+        <div class="col-sm-6 col-lg-6">
+          <label class="form-label text-dark-blue">Description:</label>
+        </div>
+        <div class="col-sm-6 col-lg-6">
+          <textarea
+            type="text"
+            placeholder="Description"
+            class="form-control position-relative"
+            formControlName="description"
+            required
+          ></textarea>
+        </div>
+      </div>
+
+      <!--Created-->
+      <div class="row">
+        <div class="col-sm-6 col-lg-6">
+          <label class="form-label text-dark-blue">Created By:</label>
+        </div>
+        <div class="col-sm-6 col-lg-6">
+          <input
+            type="text"
+            placeholder="Name of creator"
+            class="form-control position-relative"
+            formControlName="createdBy"
+            required
+          />
+        </div>
+      </div>
+
+      <!--Duration-->
+      <div class="row">
+        <div class="col-sm-6 col-lg-6">
+          <label class="form-label text-dark-blue">Duration:</label>
+        </div>
+        <div class="col-sm-6 col-lg-6">
+          <input
+            type="number"
+            class="form-control position-relative"
+            formControlName="duration"
+            required
+          />
+        </div>
+      </div>
+
+      <!--Submit Button-->
+      <div class="create">
+        <button
+          class="btn btn-blue w-100"
+          type="submit"
+          [disabled]="createCourseForm.invalid || createCourseForm.pristine"
+          (click)="onCreateCourse()"
+        >
+          Create course
+        </button>
+      </div>
+    </form>
   </section>
 </app-layout-template>

@@ -17,21 +17,14 @@
         {{ "categories.provided_description" | translate }}
       </p>
     </div>
-    <div class="row g-4">
-      <div
-        class="col-sm-12 col-md-6 col-lg-3"
-        *ngFor="let providedCourse of providedCourses"
-      >
-        <app-generic-card 
-          [courseId]="providedCourse.courseId"
-          [courseImage]="providedCourse.courseImage"
-          [title]="providedCourse.title"
-          [description]="providedCourse.description"
-          (courseDetails)="onCourseDetails($event)"
-        >
-        </app-generic-card>
-      </div>
-    </div>
+
+    <!--Courses Card-->
+    <app-generic-card
+      [courses]="courses"
+      (courseDetails)="onCourseDetails($event)">
+    </app-generic-card>
+
+    <!--Button-->
     <div class="btn d-flex justify-content-center mt-5">
       <button
         type="button"
